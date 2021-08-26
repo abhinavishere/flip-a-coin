@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flip a coin</title>
+    <!--Google Font-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/b6c975b9d9.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Main.js -->
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <header class="nav__wrapper">
+      <nav class="nav">
+        <div class="nav__logo">Flip the coin 💰</div>
+        <div class="nav__share">
+          <div class="share__icon"><i class="fas fa-share-square"></i></div>
+        </div>
+      </nav>
+    </header>
+    <main class="main__wrapper">
+      <div class="container">
+        <div class="stats">
+          <p id="heads-count">Heads: 0</p>
+          <p id="tails-count">Tails: 0</p>
+        </div>
+        <div class="coin">
+          <audio src="./coinflip.mp3"></audio>
+          <div class="heads">
+            <!-- <img src="./heads.svg" alt="Heads" /> -->
+            <div class="coin__outer">
+              <div class="coin__inner">
+                <div class="coin__text">
+                  <h3 class="coin__text-heads">heads</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tails">
+            <!-- <img src="./tails.svg" alt="TAils" /> -->
+            <div class="coin__outer">
+              <div class="coin__inner">
+                <div class="coin__text">
+                  <h3 class="coin__text-tails">Tails</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <button id="flip-button">Flip Coin</button
+          ><button id="reset-button">Reset</button>
+        </div>
+      </div>
+      <!-- Settings -->
+      <section class="settings">
+        <header class="settings__header">
+          <h3 class="settings__text">Settings ⚙</h3>
+          <div class="settings__icons">
+            <a href="#" class="settings__toggle">
+              <span class="settings__icon settings__open hide">
+                <i class="fas fa-plus"></i>
+              </span>
+              <span class="settings__icon settings__close">
+                <i class="fas fa-minus"></i>
+              </span>
+            </a>
+          </div>
+        </header>
+        <section class="settings__body">
+          <div class="tabs">
+            <div class="tab tab--active" data-tab="texts">Texts</div>
+            <div class="tab" data-tab="images">Images</div>
+            <div class="tab" data-tab="quantity">Quantity</div>
+            <div class="tab" data-tab="color">Colors</div>
+            <div class="tab" data-tab="sound">Sound</div>
+          </div>
+          <div class="tabbed__wrapper">
+            <!-- Texts Section -->
+            <div class="tabbed__section texts tabbed__section--active">
+              <form action="#" class="texts__form">
+                <div class="texts__group">
+                  <label for="text-heads" class="texts__label">Heads</label>
+                  <input
+                    type="text"
+                    name="coin"
+                    id="text-heads"
+                    class="texts__input"
+                    placeholder="(Max 3 words, 5 chars/word)"
+                    value="Heads"
+                  />
+                </div>
+                <div class="texts__group">
+                  <label for="text-tails" class="texts__label">Tails</label>
+                  <input
+                    type="text"
+                    name="coin"
+                    id="text-tails"
+                    class="texts__input"
+                    placeholder="(Max 3 words, 5 chars/word)"
+                    value="Tails"
+                  />
+                </div>
+              </form>
+            </div>
+            <!-- Images Section -->
+            <div class="tabbed__section images">
+              <div class="images__wrapper">
+                <div class="images__group">
+                  <label for="image-heads" class="images__label">
+                    Heads
+                    <span class="images__add"><i class="fas fa-plus"></i></span>
+                    <input
+                      type="file"
+                      name="image"
+                      id="image-heads"
+                      class="images__input"
+                    />
+                  </label>
+                </div>
+                <div class="images__group">
+                  <label for="image-tails" class="images__label">
+                    Tails
+                    <span class="images__add"><i class="fas fa-plus"></i></span>
+                    <input
+                      type="file"
+                      name="image"
+                      id="image-tails"
+                      class="images__input"
+                      accept=".jpg, .jpeg, .png"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- Quantity Section -->
+            <div class="tabbed__section quantity">
+              <div class="quantity__group">
+                <p>Coin Quantity</p>
+                <div class="quantity__amount">
+                  <label for="1" class="quantity__label quantity--active">
+                    <input
+                      type="radio"
+                      name="dice-quantity"
+                      id="1"
+                      class="quantity__input"
+                    />
+                    <span>1</span>
+                  </label>
+                  <label for="2" class="quantity__label">
+                    <input
+                      type="radio"
+                      name="dice-quantity"
+                      id="2"
+                      class="quantity__input"
+                    />
+                    <span>2</span></label
+                  >
+                  <label for="3" class="quantity__label">
+                    <input
+                      type="radio"
+                      name="dice-quantity"
+                      id="3"
+                      class="quantity__input"
+                    />
+                    <span>3</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- Colos Section -->
+            <div class="tabbed__section color">
+              <div class="color__grid">
+                <div class="color__group">
+                  <div class="color__wrapper">
+                    <div class="color__prim"></div>
+                    <div class="color__sec"></div>
+                  </div>
+                  <label
+                    for="color-1"
+                    class="color__label"
+                    data-pri="#59569d"
+                    data-sec="#f25292"
+                    ><input
+                      type="radio"
+                      name="colors"
+                      id="color-1"
+                      class="color__input"
+                      checked /><span class="color__radio"></span
+                  ></label>
+                </div>
+                <div class="color__group">
+                  <div class="color__wrapper">
+                    <div class="color__prim"></div>
+                    <div class="color__sec"></div>
+                  </div>
+                  <label
+                    for="color-2"
+                    class="color__label"
+                    data-pri="#07689f"
+                    data-sec="#ff7e67"
+                    ><input
+                      type="radio"
+                      name="colors"
+                      id="color-2"
+                      class="color__input" /><span class="color__radio"></span
+                  ></label>
+                </div>
+                <div class="color__group">
+                  <div class="color__wrapper">
+                    <div class="color__prim"></div>
+                    <div class="color__sec"></div>
+                  </div>
+                  <label
+                    for="color-3"
+                    class="color__label"
+                    data-pri="#2c786c"
+                    data-sec="#f8b400"
+                    ><input
+                      type="radio"
+                      name="colors"
+                      id="color-3"
+                      class="color__input" /><span class="color__radio"></span
+                  ></label>
+                </div>
+                <div class="color__group">
+                  <div class="color__wrapper">
+                    <div class="color__prim"></div>
+                    <div class="color__sec"></div>
+                  </div>
+                  <label
+                    for="color-4"
+                    class="color__label"
+                    data-pri="#303841"
+                    data-sec="#d4a5a5"
+                    ><input
+                      type="radio"
+                      name="colors"
+                      id="color-4"
+                      class="color__input" /><span class="color__radio"></span
+                  ></label>
+                </div>
+                <div class="color__group">
+                  <div class="color__wrapper">
+                    <div class="color__prim"></div>
+                    <div class="color__sec"></div>
+                  </div>
+                  <label
+                    for="color-5"
+                    class="color__label"
+                    data-pri="#574b90"
+                    data-sec="#cfb495"
+                    ><input
+                      type="radio"
+                      name="colors"
+                      id="color-5"
+                      class="color__input" /><span class="color__radio"></span
+                  ></label>
+                </div>
+                <div class="color__group">
+                  <div class="color__wrapper">
+                    <div class="color__prim"></div>
+                    <div class="color__sec"></div>
+                  </div>
+                  <label
+                    for="color-6"
+                    class="color__label"
+                    data-pri="#005792"
+                    data-sec="#f7be16"
+                    ><input
+                      type="radio"
+                      name="colors"
+                      id="color-6"
+                      class="color__input" /><span class="color__radio"></span
+                  ></label>
+                </div>
+                <div class="color__group">
+                  <div class="color__wrapper">
+                    <div class="color__prim"></div>
+                    <div class="color__sec"></div>
+                  </div>
+                  <label
+                    for="color-7"
+                    class="color__label"
+                    data-pri="#086972"
+                    data-sec="#ff6f3c"
+                    ><input
+                      type="radio"
+                      name="colors"
+                      id="color-7"
+                      class="color__input" /><span class="color__radio"></span
+                  ></label>
+                </div>
+                <div class="color__group">
+                  <div class="color__wrapper">
+                    <div class="color__prim"></div>
+                    <div class="color__sec"></div>
+                  </div>
+                  <label
+                    for="color-8"
+                    class="color__label"
+                    data-pri="#252a34"
+                    data-sec="#ff2e63"
+                    ><input
+                      type="radio"
+                      name="colors"
+                      id="color-8"
+                      class="color__input" /><span class="color__radio"></span
+                  ></label>
+                </div>
+              </div>
+            </div>
+            <div class="tabbed__section sound">
+              <div class="sound__group">
+                <p class="sound__text">Sound on</p>
+                <label for="sound" class="sound__label">
+                  <input
+                    type="checkbox"
+                    name="sound"
+                    id="sound"
+                    class="sound__checkbox"
+                    checked
+                  />
+                  <span class="sound__check"><i class="fas fa-check"></i></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- section. Dice Roller Link -->
+      <section class="external__links">
+        <div class="external__wrapper">
+          <a href="#" class="external__link">
+            <h3 class="external__text">Try Dice Roller</h3>
+            <div class="external__icon">🎲</div>
+          </a>
+        </div>
+        <!-- Feedback Section -->
+        <div class="external__wrapper">
+          <a href="#" class="external__link">
+            <h3 class="external__text">Send Feedback</h3>
+            <div class="external__icon">
+              <i class="fa fa-comment" aria-hidden="true"></i>
+            </div>
+          </a>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section class="about">
+        <h1 class="about__title">Flip a Coin Online to Make a Decision</h1>
+        <div class="about__section">
+          <h3 class="about__header">1. What is FlipSimu?</h3>
+          <p class="about__body">
+            FlipSimu is a heads or tails coin flip simulator. You can flip a
+            coin virtually as if flipping a real coin.
+          </p>
+          <p class="about__body">
+            The objective of FlipSimu is to help you in decision making. Before
+            flipping a coin, you can decide what decision to be made when either
+            of the heads or tails is selected.
+          </p>
+          <p class="about__body">
+            Sometimes it is hard to get a coin for doing the coin flip. As an
+            alternative, our team has developed the FlipSimu for everyone to
+            easy access and flip a coin online.
+          </p>
+          <p class="about__body">
+            Our coin has slightly difference compared to conventional coin. You
+            can change the heads and tails' texts as well as their colors.
+          </p>
+          <p class="about__body">
+            Our team is trying to simulate the coin flipper as real as possible.
+            Hence, the FlipSimu is integrated with an energy simulator and coin
+            flip sound for the coin toss.
+          </p>
+          <p class="about__body">
+            FlipSimu also has extra features which are "Test Your Intuition" and
+            "Test Your Luck".
+          </p>
+          <p class="about__body">
+            Besides, if you want to roll a die instead, you could checkout our
+            <a href="#">Dice Roller</a>.
+          </p>
+        </div>
+        <div class="about__section">
+          <h3 class="about__header">2. How to Use the Coin Flipper?</h3>
+          <p class="about__body">
+            Coin flip online using FlipSimu is very easy. There are two ways to
+            flip coin.
+          </p>
+          <p class="about__body">
+            1. You can click the coin or click the flip button to start random
+            flipping.
+          </p>
+          <p class="about__body">
+            2. You can long-press and release the flip button to simulate the
+            flipping energy. The probability of heads or tails is also 50:50 as
+            if you toss a coin hardly or softly in the real world.
+          </p>
+          <p class="about__body">
+            3. The result of the coin flip will then be shown.
+          </p>
+          <p class="about__body">
+            4. The result will contribute to our world and your own statistics
+            of heads or tails probability.
+          </p>
+          <p class="about__body">
+            5. You can also change your coin texts, images, colors, sound and
+            quantity of coins at the settings section.
+          </p>
+          <p class="about__body">
+            6. Besides, FlipSimu also comes with interesting / fun features in
+            which you could test your intuition and your luck today.
+          </p>
+        </div>
+        <div class="about__section">
+          <h3 class="about__header">3. Types of Test</h3>
+          <p class="about__body">
+            There are intuition and luck tests available on this coin flip
+            simulator.
+          </p>
+        </div>
+        <div class="about__section">
+          <h3 class="about__header">3.1. How does Intuition Test work?</h3>
+          <p class="about__body">
+            There are 10 trials in the intuition test. You have to guess the
+            result for each flip. The more you can get from the right guess, the
+            higher will be your intuition score. You have to choose what will be
+            the next result before you flip.
+          </p>
+        </div>
+        <div class="about__section">
+          <h3 class="about__header">3.2. How does Luck Test work?</h3>
+          <p class="about__body">
+            You have to get the same flip results throughout the flipping,
+            maximum at 5 flipping. The more you can get the same flips, the
+            higher will be your luck score.
+          </p>
+        </div>
+        <div class="about__section">
+          <h3 class="about__header">4. When to Use FlipSimu?</h3>
+          <p class="about__body">
+            These are the examples of scenarios that you can use the FlipSimu.
+          </p>
+          <div class="about__body">
+            <ul>
+              <li>Choose A if heads and choose B if tails?</li>
+              <li>Buy it if heads and not buy if tails?</li>
+              <li>Want to know my luck today.</li>
+              <li>Want to know my intuition accuracy today.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="about__section">
+          <h3 class="about__header">5. Save as a Dekstop or Mobile App</h3>
+          <p class="about__body">
+            FlipSimu is a decision making and fun coin flipper. You may use it
+            wherever you want. You can search flipsimu.com to use the tool. Or
+            you can save it as desktop or mobile applications.
+          </p>
+        </div>
+        <div class="about__section">
+          <h3 class="about__header">6. Share the App</h3>
+          <p class="about__body">
+            If you would like to share the joy of using FlipSimu with your
+            friends and family, you could do it easily by clicking the share
+            button (beside the logo).
+          </p>
+          <p class="about__body">
+            You can choose to share the URL directly or through Facebook or
+            Twitter.
+          </p>
+        </div>
+        <h1 class="about__title">
+          Let's Flip a Coin Now Using FlipSimu Coin Flip Simulator!
+        </h1>
+      </section>
+      <!-- Footer -->
+      <section class="footer">
+        <ul class="footer__links">
+          <li><a href="#" class="footer__link">About</a></li>
+          <li><a href="#" class="footer__link">FAQ</a></li>
+          <li><a href="#" class="footer__link">Contact</a></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
