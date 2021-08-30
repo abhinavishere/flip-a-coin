@@ -181,7 +181,7 @@ colorGrid.addEventListener("click", (e) => {
 
 // Set Color Function
 function setColor(primaryColor, secondaryColor) {
-  document.body.style.background = `linear-gradient(to right, ${primaryColor} 50%, ${secondaryColor} 50%)  fixed`;
+  document.body.style.background = `linear-gradient(to right, ${primaryColor}, ${secondaryColor})  fixed`;
   flipBtn.style.background = `${primaryColor}`;
   flipBtn.style.borderColor = `${primaryColor}`;
   resetBtn.style.borderColor = `${primaryColor}`;
